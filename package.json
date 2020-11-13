@@ -1,0 +1,36 @@
+{
+  "name": "pname",
+  "version": "1.0.0",
+  "description": "Cloudflare worker TypeScript template",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "NODE_ENV=development npm run build",
+    "format": "prettier --write '**/*.{ts,js,css,json,md}'",
+    "test": "jest",
+    "coverage": "yarn test --ci --coverage"
+  },
+  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.0.0",
+    "@trust/webcrypto": "^0.9.2",
+    "@types/jest": "^26.0.15",
+    "@types/service-worker-mock": "^2.0.1",
+    "jest": "^26.6.3",
+    "jest-fetch-mock": "^3.0.3",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "service-worker-mock": "^2.0.5",
+    "ts-jest": "^26.4.4",
+    "ts-loader": "^7.0.5",
+    "ts-node": "^9.0.0",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "tiny-request-router": "^1.2.2"
+  }
+}
