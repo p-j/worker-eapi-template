@@ -1,5 +1,5 @@
-import { Router, Method } from 'tiny-request-router'
-import { FetchEventHandler, Middleware, RequestContext, RequestHandler } from './types'
+import { Router, Method, Params } from 'tiny-request-router'
+import { FetchEventHandler, Middleware, RequestHandler } from './types'
 import { router } from './router'
 import { applyMiddlewares } from './middlewares/_utils'
 import { withErrorHandler } from './middlewares/errorHandler'
@@ -7,8 +7,18 @@ import { withMaintenance } from './middlewares/maintenance'
 
 export interface EventHandlerFactoryOptions {
   router: Router
+  matcher: RouteMatcher
   originless?: boolean
   middlewares?: Middleware[]
+}
+
+interface RouteMatcher {
+  ({ event, router }: { event: FetchEvent; router: unknown }): RouteMatch | null
+}
+
+interface RouteMatch {
+  handler: RequestHandler
+  params: Params
 }
 
 /**
@@ -22,6 +32,7 @@ export interface EventHandlerFactoryOptions {
  */
 export function eventHandlerFactory({
   router,
+  matcher,
   originless = false,
   middlewares = [],
 }: EventHandlerFactoryOptions): FetchEventHandler {
@@ -33,8 +44,7 @@ export function eventHandlerFactory({
    * @returns the final response (or promise of response) to be sent to the client
    */
   return async function eventHandler(event) {
-    const { pathname } = new URL(event.request.url)
-    const match = router.match(event.request.method as Method, pathname)
+    const match = matcher({ router, event })
 
     const requestContext = {
       event,
@@ -50,8 +60,14 @@ export function eventHandlerFactory({
   }
 }
 
+const matcher: RouteMatcher = ({ event, router }) => {
+  const { pathname } = new URL(event.request.url)
+  return (router as Router).match(event.request.method as Method, pathname)
+}
+
 export const fetchEventHandler = eventHandlerFactory({
   router,
+  matcher,
   originless: true,
   middlewares: [withErrorHandler(), withMaintenance()],
 })
