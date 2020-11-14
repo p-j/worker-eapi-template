@@ -1,16 +1,6 @@
 import { fetchEventHandler } from '../src/index'
 describe('handler returns response with request method', () => {
-  const methods = [
-    'GET',
-    'HEAD',
-    'POST',
-    'PUT',
-    'DELETE',
-    'CONNECT',
-    'OPTIONS',
-    'TRACE',
-    'PATCH',
-  ]
+  const methods = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'CONNECT', 'OPTIONS', 'TRACE', 'PATCH']
   methods.forEach((method) => {
     it(method, async () => {
       const request = new Request('/', { method })

@@ -27,8 +27,7 @@ export class KV_MOCK {
       value,
       metadata: { expirationTtl, createdAt },
     } = valueObj
-    if (expirationTtl && expirationTtl * 1000 + createdAt <= Date.now())
-      return null
+    if (expirationTtl && expirationTtl * 1000 + createdAt <= Date.now()) return null
     if (type === 'json') return JSON.parse(value)
     return value
   }
@@ -83,8 +82,8 @@ Object.assign(
   },
 )
 
-  // open the default cache that is readily available on Cloudflare Workers
-  // NOTE: there is one caveat with this setup:
-  // the polyfill currently allow any method to be put in cache and will match regardless of the method in the cache as well
-  // @see https://github.com/zackargyle/service-workers/pull/139
-  ; (async () => (global.caches.default = await caches.open('default')))()
+// open the default cache that is readily available on Cloudflare Workers
+// NOTE: there is one caveat with this setup:
+// the polyfill currently allow any method to be put in cache and will match regardless of the method in the cache as well
+// @see https://github.com/zackargyle/service-workers/pull/139
+;(async () => (global.caches.default = await caches.open('default')))()

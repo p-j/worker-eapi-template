@@ -3,6 +3,7 @@
 > EAPI for Edge API, or Extremelly Awesome Programation Interface, you decide
 
 A template for kick starting a TypeScript Cloudflare worker project with all the bells and whistles.
+
 - Inspired by [`worker-typescript-template`](https://github.com/cloudflare/worker-typescript-template) & [Express](https://expressjs.com/)
 - Includes:
   - [`tiny-request-router`](https://github.com/berstend/tiny-request-router) for routing your requests
@@ -36,7 +37,6 @@ wrangler generate my-ts-project https://github.com/p-j/worker-ts-api-template
 [`src/helpers`](./src/helpers) contains generic helpers
 
 [`__tests__/handlers.ts`](./__tests__/handlers.ts) contains a functional test for the demo
-
 
 ### 🧪 Testing
 

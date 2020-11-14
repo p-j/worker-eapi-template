@@ -8,10 +8,7 @@ import { Middleware, RequestHandler } from '../types'
  * applyMiddlewares(handler, [a,b,c]) // is equivalent to
  * a(b(c(handler)))
  */
-export function applyMiddlewares(
-  requestHandler: RequestHandler,
-  ...middlewares: Middleware[]
-): RequestHandler {
+export function applyMiddlewares(requestHandler: RequestHandler, ...middlewares: Middleware[]): RequestHandler {
   return middlewares.reduceRight(
     (previousHandler, currentMiddleware) => currentMiddleware(previousHandler),
     requestHandler,

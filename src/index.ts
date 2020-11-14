@@ -35,15 +35,18 @@ export function eventHandlerFactory({
   return async function eventHandler(event) {
     const { pathname } = new URL(event.request.url)
     const match = router.match(event.request.method as Method, pathname)
-    const ctx: RequestContext = { event, request: event.request, params: (match && match.params) || {} }
-    return match
-      ? applyMiddlewares(
-        match.handler as RequestHandler,
-        ...middlewares,
-      )(ctx)
-      : originless
-        ? new Response('Not Found', { status: 404 })
-        : fetch(event.request)
+
+    const requestContext = {
+      event,
+      request: event.request,
+      params: (match && match.params) || {},
+    }
+
+    return match // apply all middlwares to build the final request handler and pass it the request context
+      ? applyMiddlewares(match.handler as RequestHandler, ...middlewares)(requestContext)
+      : originless // if no match, respond with a 404 in case of an oringless worker, call the origin otherwise
+      ? new Response('Not Found', { status: 404 })
+      : fetch(event.request)
   }
 }
 
@@ -53,6 +56,4 @@ export const fetchEventHandler = eventHandlerFactory({
   middlewares: [withErrorHandler(), withMaintenance()],
 })
 
-addEventListener('fetch', (event) =>
-  event.respondWith(fetchEventHandler(event)),
-)
+addEventListener('fetch', (event) => event.respondWith(fetchEventHandler(event)))

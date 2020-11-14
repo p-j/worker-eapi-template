@@ -14,24 +14,14 @@ export interface CorsOptions {
  * @param options.isOriginAllowed an optional function to validate the origin of the request
  * @returns a Response with CORS headers
  */
-export function cors({
-  response,
-  origin,
-  isOriginAllowed,
-}: CorsOptions): Response {
+export function cors({ response, origin, isOriginAllowed }: CorsOptions): Response {
   if (typeof isOriginAllowed === 'function' && !isOriginAllowed(origin)) {
     return response
   }
   const responseWithCors = new Response(response.body, response)
   responseWithCors.headers.set('Access-Control-Allow-Origin', origin)
-  responseWithCors.headers.set(
-    'Access-Control-Allow-Headers',
-    ACCESS_CONTROL_ALLOW_HEADERS.join(', '),
-  )
-  responseWithCors.headers.set(
-    'Access-Control-Allow-Methods',
-    'OPTIONS, HEAD, GET, POST, DELETE, PUT, PATCH',
-  )
+  responseWithCors.headers.set('Access-Control-Allow-Headers', ACCESS_CONTROL_ALLOW_HEADERS.join(', '))
+  responseWithCors.headers.set('Access-Control-Allow-Methods', 'OPTIONS, HEAD, GET, POST, DELETE, PUT, PATCH')
   responseWithCors.headers.set('Access-Control-Max-Age', '86400')
   const vary = responseWithCors.headers.get('Vary')
   if (!vary || !vary.includes('Origin')) {
@@ -40,11 +30,7 @@ export function cors({
   return responseWithCors
 }
 
-export function withCors({
-  isOriginAllowed,
-}: {
-  isOriginAllowed?: Function
-}): Middleware {
+export function withCors({ isOriginAllowed }: { isOriginAllowed?: Function }): Middleware {
   return function _withCors(requestHandler) {
     return async function corsHandler({ event, request, params }) {
       const response = await requestHandler({ event, request, params })

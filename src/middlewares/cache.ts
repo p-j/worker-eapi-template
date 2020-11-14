@@ -25,11 +25,7 @@ export interface WithCacheOptions {
  * And for the underlying API
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Cache
  */
-export function withCache({
-  cacheControl,
-  cdnTtl,
-  cacheError = false,
-}: WithCacheOptions): Middleware {
+export function withCache({ cacheControl, cdnTtl, cacheError = false }: WithCacheOptions): Middleware {
   return function _withCache(requestHandler) {
     return async function cacheHandler({ event, request, params }) {
       // Bypass the middleware if not applicable
@@ -63,10 +59,7 @@ export function withCache({
       // https://developers.cloudflare.com/workers/templates/pages/modify_res_props
       const response = new Response(originalResponse.body, originalResponse)
       // Add some timings information, if taken from cache, the values stacks which is neat
-      response.headers.append(
-        'Server-Timing',
-        `cfw-${cacheMiss ? 'miss' : 'hit'};dur=${execTime}`,
-      )
+      response.headers.append('Server-Timing', `cfw-${cacheMiss ? 'miss' : 'hit'};dur=${execTime}`)
 
       if (!cacheError && response.status >= 400) {
         // If response is an error, by default we prevent it from being cached
@@ -77,9 +70,7 @@ export function withCache({
       }
 
       const shouldPutInCache =
-        cacheMiss &&
-        response.headers.get('Cache-Control') &&
-        response.headers.get('Cache-Control') !== 'no-store'
+        cacheMiss && response.headers.get('Cache-Control') && response.headers.get('Cache-Control') !== 'no-store'
 
       if (shouldPutInCache) {
         DEFAULT_VARY_HEADERS.forEach((header) => {

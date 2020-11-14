@@ -6,10 +6,7 @@ export function withMaintenance(): Middleware {
   return function _withMaintenance(requestHandler) {
     return function maintenanceHandler({ request, event, params }) {
       // Check for maintenance state & IP Whitelisting
-      if (
-        IS_MAINTENANCE === 'false' ||
-        IP_ALLOW_LIST.includes(request.headers.get('cf-connecting-ip') || '')
-      ) {
+      if (IS_MAINTENANCE === 'false' || IP_ALLOW_LIST.includes(request.headers.get('cf-connecting-ip') || '')) {
         return requestHandler({ request, event, params })
       } else {
         const modifiedHeaders = new Headers()
