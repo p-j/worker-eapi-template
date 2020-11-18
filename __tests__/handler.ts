@@ -1,11 +1,11 @@
-import { fetchEventHandler } from '../src/index'
+import { eventHandler } from '../src/index'
 describe('handler returns response with request method', () => {
   const methods = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'CONNECT', 'OPTIONS', 'TRACE', 'PATCH']
   methods.forEach((method) => {
     it(method, async () => {
       const request = new Request('/', { method })
       const event = new FetchEvent('fetch', { request })
-      const response = await fetchEventHandler(event)
+      const response = await eventHandler(event)
       const text = await response.text()
 
       // Test the helloWorld handler
