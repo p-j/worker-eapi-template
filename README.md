@@ -1,6 +1,6 @@
 # `workers-eapi-template`
 
-> EAPI for Edge API, or Extremelly Awesome Programation Interface, you decide
+> [EAPI](https://github.com/p-j/eapi) for Edge API, or Extremelly Awesome Programation Interface, you decide
 
 A template for kick starting a TypeScript Cloudflare worker project with all the bells and whistles.
 
