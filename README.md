@@ -20,7 +20,7 @@ This template is meant to be used with [Wrangler](https://github.com/cloudflare/
 To generate using Wrangler, run this command:
 
 ```bash
-wrangler generate my-ts-project https://github.com/p-j/worker-ts-api-template
+wrangler generate my-ts-project https://github.com/p-j/worker-eapi-template
 ```
 
 ### 👩 💻 Developing
