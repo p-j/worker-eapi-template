@@ -271,7 +271,7 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cloudflare/workers-types@^2.0.0":
+"@cloudflare/workers-types@^2.0.0", "@cloudflare/workers-types@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-2.1.0.tgz#6e4f07567f4c914ad811c2d7a6172d0ae834c7f6"
   integrity sha512-VmXaHTq0lt6Xre4aK1hUK25hjZjuEUkHtdUEt0FJamv+NzQO54Gwp6Zr5Cfu6SP5EQ/tTmTMP/tK9npA8zhcCg==
@@ -470,6 +470,35 @@
     "@types/node" "*"
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
+
+"@p-j/eapi-middleware-cache@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@p-j/eapi-middleware-cache/-/eapi-middleware-cache-1.0.0-alpha.0.tgz#11bc14064948c6c0cafdbc7f610220c9cda62f20"
+  integrity sha512-ZyV96e4XNZidYq5SCi+n1S1caBEQLBSxWOoo2LVoCxeo+byHIjfqgYZGU8AwxxmV3J2KR88YGl1z3JTafJ/8Zw==
+
+"@p-j/eapi-middleware-errorhandler@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@p-j/eapi-middleware-errorhandler/-/eapi-middleware-errorhandler-1.0.0-alpha.0.tgz#75598f24dab415af8526405c06a9f6f9ef7b1980"
+  integrity sha512-JYU5jbFZkQJ2v+0ekdaa3OLeQ9lz/pQbIO17p1WjDnQIAAkSw54OIWOe0RMq8Jz+O5ysl5x6lalAkPn8fnn3Zg==
+
+"@p-j/eapi-types@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@p-j/eapi-types/-/eapi-types-1.0.0-alpha.0.tgz#388cd9355ed1245eaac50d16677c4ad75a7f539d"
+  integrity sha512-q16HoM6fclIV6uLyylNyvONAYaPQJmtoAazQRptGyywS0U0bHJgPbxLAig5NFPYdMA+7Td6ck3HGD1Nd7rk1pA==
+  dependencies:
+    "@cloudflare/workers-types" "^2.1.0"
+
+"@p-j/eapi-util-applymiddlewares@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@p-j/eapi-util-applymiddlewares/-/eapi-util-applymiddlewares-1.0.0-alpha.0.tgz#ebc2093bf5a72332abbb75c2d39de873878c75f9"
+  integrity sha512-LYHwK0duWsDNuVWS+m27E30xiFOb0fCSda8DtGj5tHyu7MnDU6Ttxf0RTaBpAL8cX7oqKnql5ATjSqcCts74nQ==
+
+"@p-j/eapi-util-fetcheventhandler@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@p-j/eapi-util-fetcheventhandler/-/eapi-util-fetcheventhandler-1.0.1.tgz#da141246a8eb8c10e5c9c1c0254dceaaf0304f7c"
+  integrity sha512-bg5dvCe2FSCnGUG1olHQA0J0G/4+MI78wr1TQ0ZwjRUbdhFeqYo8DBvykGlFgPKuNGpQ+Wq3blBOc06xCd11Nw==
+  dependencies:
+    "@p-j/eapi-util-applymiddlewares" "^1.0.0-alpha.0"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.1"

@@ -7,6 +7,7 @@
   "license": "MIT",
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
+    "@p-j/eapi-types": "^1.0.0-alpha.0",
     "@trust/webcrypto": "^0.9.2",
     "@types/jest": "^26.0.15",
     "@types/node-fetch": "^2.5.7",
@@ -24,6 +25,10 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@p-j/eapi-middleware-cache": "^1.0.0-alpha.0",
+    "@p-j/eapi-middleware-errorhandler": "^1.0.0-alpha.0",
+    "@p-j/eapi-util-applymiddlewares": "^1.0.0-alpha.0",
+    "@p-j/eapi-util-fetcheventhandler": "^1.0.1",
     "tiny-request-router": "^1.2.2"
   },
   "scripts": {

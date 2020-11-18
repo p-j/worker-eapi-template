@@ -6,11 +6,12 @@ A template for kick starting a TypeScript Cloudflare worker project with all the
 
 - Inspired by [`worker-typescript-template`](https://github.com/cloudflare/worker-typescript-template) & [Express](https://expressjs.com/)
 - Includes:
-  - [`tiny-request-router`](https://github.com/berstend/tiny-request-router) for routing your requests
   - And a Middleware setup to help with code reuse accross enpoints
   - Some useful Middlewares to get you started
   - A number of type definitions to help you code with confidence
   - A test setup with Jest & all the polyfills & mock you need
+  - [`tiny-request-router`](https://github.com/berstend/tiny-request-router) for routing your requests, you can replace it with any other router you like though, it's only baked in for convenience
+  - A number of compatible middlwares & utility at [`p-j/eapi`](https://github.com/p-j/eapi)
 
 ## 🔋 Getting Started
 
@@ -24,17 +25,13 @@ wrangler generate my-ts-project https://github.com/p-j/worker-ts-api-template
 
 ### 👩 💻 Developing
 
-[`src/types.js`](./src/types.ts) contains some usefull interfaces to help you code new `Middlewares` and `RequestHandler` with confidence
-
 [`src/index.js`](./src/index.ts) setup the fetchEventHandler with the appropriate router instance and default middlewares
 
 [`src/router.js`](./src/router.ts) define the routes, the middlewares and handlers for your application
 
-[`src/middlwares`](./src/middlwares) contains usefull middlewares to get you started
+[`src/middlwares`](./src/middlwares) contains contains a demo middleware, you can find other 'ready to use' middlewares at [`p-j/eapi`](https://github.com/p-j/eapi)
 
 [`src/handlers`](./src/handlers) contains a demo handler
-
-[`src/helpers`](./src/helpers) contains generic helpers
 
 [`__tests__/handlers.ts`](./__tests__/handlers.ts) contains a functional test for the demo
 
