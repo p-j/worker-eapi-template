@@ -17,13 +17,15 @@ A template for kick starting a TypeScript Cloudflare worker project with all the
 
 This template is meant to be used with [Wrangler](https://github.com/cloudflare/wrangler). If you are not already familiar with the tool, I recommend that you install the tool and configure it to work with your [Cloudflare account](https://dash.cloudflare.com). Documentation can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler/).
 
-[Click here](https://github.com/p-j/worker-eapi-template/generate) to use this repository as a template for your project.
+To use this template, [click here](https://github.com/p-j/worker-eapi-template/generate) to create a github repository from it.
 
-Alternatively you can use Wrangler to generate a new project using this template:
+Alternatively you can use Wrangler to generate a new project:
 
 ```bash
 # This currently doesn't work, waiting on https://github.com/cloudflare/wrangler/pull/1653 or an alternative fix
-wrangler generate my-ts-project https://github.com/p-j/worker-eapi-template --branch=main
+wrangler generate my-ts-project p-j/worker-eapi-template --branch=main
+cd my-ts-project
+yarn
 ```
 
 ### 👩 💻 Developing
