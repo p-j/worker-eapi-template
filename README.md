@@ -6,12 +6,11 @@ A template for kick starting a TypeScript Cloudflare worker project with all the
 
 - Inspired by [`worker-typescript-template`](https://github.com/cloudflare/worker-typescript-template) & [Express](https://expressjs.com/)
 - Includes:
-  - And a Middleware setup to help with code reuse accross enpoints
-  - Some useful Middlewares to get you started
-  - A number of type definitions to help you code with confidence
+  - A Middleware setup to help with code reuse accross enpoints
+  - A number of [type definitions](https://github.com/p-j/eapi/blob/main/packages/eapi-types/index.d.ts) to help you code with confidence
+  - A number of compatible middlwares & utility that can be found at [`p-j/eapi`](https://github.com/p-j/eapi)
   - A test setup with Jest & all the polyfills & mock you need
   - [`tiny-request-router`](https://github.com/berstend/tiny-request-router) for routing your requests, you can replace it with any other router you like though, it's only baked in for convenience
-  - A number of compatible middlwares & utility at [`p-j/eapi`](https://github.com/p-j/eapi)
 
 ## 🔋 Getting Started
 
@@ -54,8 +53,10 @@ For information on how to preview and publish your worker, please see the [Wrang
 
 ## 🤢 Issues
 
-If you run into issues with this specific project, please feel free to file an issue [here](https://github.com/cloudflare/workers-typescript-template/issues). If the problem is with Wrangler, please file an issue [here](https://github.com/cloudflare/wrangler/issues).
+If you run into issues with this specific project, please feel free to file an issue [here](https://github.com/p-j/worker-eapi-template/issues). If the problem is with Wrangler, please file an issue [here](https://github.com/cloudflare/wrangler/issues).
 
 ## ⚠️ Caveats
 
 The `service-worker-mock` used by the tests is not a perfect representation of the Cloudflare Workers runtime. It is a general approximation. We recommend that you test end to end with `wrangler dev` in addition to a [staging environment](https://developers.cloudflare.com/workers/tooling/wrangler/configuration/environments/) to test things before deploying.
+
+Also, the [`KV_MOCK`](https://github.com/p-j/worker-eapi-template/blob/main/jest.setup.ts#L6-L72) is currently fairly naive and could use a more thorough implementation.
