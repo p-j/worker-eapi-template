@@ -13,6 +13,9 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     plugins: [],
   },
+  optimization: {
+    minimize: false,
+  },
   module: {
     rules: [
       {
