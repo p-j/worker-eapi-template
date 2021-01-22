@@ -1,4 +1,6 @@
 # `workers-eapi-template`
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fp-j%2Fworker-eapi-template.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fp-j%2Fworker-eapi-template?ref=badge_shield)
+
 
 > [EAPI](https://github.com/p-j/eapi) for Edge API, or Extremelly Awesome Programation Interface, you decide
 
@@ -60,3 +62,7 @@ If you run into issues with this specific project, please feel free to file an i
 The `service-worker-mock` used by the tests is not a perfect representation of the Cloudflare Workers runtime. It is a general approximation. We recommend that you test end to end with `wrangler dev` in addition to a [staging environment](https://developers.cloudflare.com/workers/tooling/wrangler/configuration/environments/) to test things before deploying.
 
 Also, the [`KV_MOCK`](https://github.com/p-j/worker-eapi-template/blob/main/jest.setup.ts#L6-L72) is currently fairly naive and could use a more thorough implementation.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fp-j%2Fworker-eapi-template.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fp-j%2Fworker-eapi-template?ref=badge_large)
