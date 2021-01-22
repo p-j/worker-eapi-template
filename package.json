@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Cloudflare Worker Template loaded with TS, a Router & Middleware setup to scale your API confidently",
   "main": "index.js",
-  "author": "Jérémie Parker <github@jeremie-parker.com>",
+  "author": "Jérémie Parker <hi@pkr.sh>",
   "license": "MIT",
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
