@@ -9,14 +9,13 @@
     "preserveConstEnums": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "types": ["@cloudflare/workers-types", "jest"]
   },
   "include": [
     "./src/*.ts",
-    "./__tests__/*.ts",
     "./src/**/*.ts",
+    "./__tests__/*.ts",
     "./__tests__/**/*.ts",
-    "./node_modules/@cloudflare/workers-types/index.d.ts"
+    "./node_modules/@cloudflare/workers-types/*.ts",
+    "./node_modules/@p-j/eapi-types/*.ts"
   ],
-  "exclude": ["node_modules/", "dist/"]
 }
