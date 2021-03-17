@@ -6,7 +6,7 @@
   "author": "Jérémie Parker <hi@pkr.sh>",
   "license": "MIT",
   "devDependencies": {
-    "@cloudflare/workers-types": "2.1.0",
+    "@cloudflare/workers-types": "2.2.1",
     "@p-j/eapi-types": "1.0.0",
     "@trust/webcrypto": "0.9.2",
     "@types/jest": "26.0.20",
