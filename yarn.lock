@@ -502,12 +502,17 @@
   resolved "https://registry.yarnpkg.com/@p-j/eapi-util-applymiddlewares/-/eapi-util-applymiddlewares-1.0.0.tgz#912e10ab01c35ca6ca8bdea5d2a8e644a69489e5"
   integrity sha512-oyLD7Sj6D5YhdiNUYOnofrQZYw5hf2nAzt40aGxbB4sMk6jdDhQ7SnJpT7JfP1wm/QjLZlewl0qoUI3pagjTbA==
 
-"@p-j/eapi-util-fetcheventhandler@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@p-j/eapi-util-fetcheventhandler/-/eapi-util-fetcheventhandler-1.0.2.tgz#2295499d455db77b89d3054a1bfc2a7202b5b3af"
-  integrity sha512-SyN0zy5SQs4bBGrvTgNOU0iVRRpHrVE/0kyWJ5vtLDIvaUbJCuHqciv5fwFp6/bDMT7DiHGJ0raVStgbqyJMEQ==
+"@p-j/eapi-util-applymiddlewares@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@p-j/eapi-util-applymiddlewares/-/eapi-util-applymiddlewares-1.1.0.tgz#5cc6a6bd2a95181d443fc850706371f653da9797"
+  integrity sha512-CXHwdntfhImaGBawS/EwlW9WGl1K2NkqYpQt2ZKPKhZzOqDtmi/5wfPWl4yW2XXX+h6ghXLkuLfuxI1UhlgStg==
+
+"@p-j/eapi-util-fetcheventhandler@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@p-j/eapi-util-fetcheventhandler/-/eapi-util-fetcheventhandler-1.1.0.tgz#6ac43568c25e2b368db00ac61dbf4a5ba3bc67a8"
+  integrity sha512-Jpf8kJKrmITwHs8tThDcrSAyc8rrBe9YaKIgRuT2GQ5GDVqPgNKHCfa6uH1pHu7TEHkZfGwAvDhSytFxFA3X4g==
   dependencies:
-    "@p-j/eapi-util-applymiddlewares" "^1.0.0"
+    "@p-j/eapi-util-applymiddlewares" "^1.1.0"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
