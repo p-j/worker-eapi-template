@@ -28,7 +28,7 @@
     "@p-j/eapi-middleware-cache": "^1.0.0",
     "@p-j/eapi-middleware-errorhandler": "^1.0.0",
     "@p-j/eapi-util-applymiddlewares": "^1.0.0",
-    "@p-j/eapi-util-fetcheventhandler": "^1.0.2",
+    "@p-j/eapi-util-fetcheventhandler": "^1.1.0",
     "tiny-request-router": "^1.2.2"
   },
   "scripts": {
