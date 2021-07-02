@@ -8,7 +8,7 @@
     "strict": true,
     "preserveConstEnums": true,
     "moduleResolution": "node",
-    "sourceMap": true,
+    "sourceMap": true
   },
   "include": [
     "./src/*.ts",
@@ -17,5 +17,5 @@
     "./__tests__/**/*.ts",
     "./node_modules/@cloudflare/workers-types/*.ts",
     "./node_modules/@p-j/eapi-types/*.ts"
-  ],
+  ]
 }
